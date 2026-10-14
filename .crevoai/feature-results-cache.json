@@ -8,7 +8,7 @@
       "blocked": 0,
       "flaky": 0,
       "total": 1,
-      "lastRunAt": "2026-10-14T06:28:47.382Z"
+      "lastRunAt": "2026-10-14T14:06:09.703Z"
     },
     "login": {
       "passed": 2,
@@ -17,7 +17,7 @@
       "blocked": 0,
       "flaky": 0,
       "total": 2,
-      "lastRunAt": "2026-10-14T06:52:20.125Z"
+      "lastRunAt": "2026-10-14T14:06:09.703Z"
     }
   }
 }

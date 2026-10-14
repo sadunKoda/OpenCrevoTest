@@ -4,19 +4,25 @@ import { loginExpected as expected } from '@config/page-loader';
 
 test.describe('Codemify - Login', () => {
 
+  // variables
+  const username = "standard_user";
+  const password = "my_secret_code";
+
   test.beforeEach(async ({ loginPage }) => {
     await loginPage.step_navigate();
   });
 
   // scenario: Valid credentials
   test('[AC-1] [TC-LOGIN-001] should open the product page', async ({ loginPage }) => {
-    await loginPage.step_login(process.env.LOGIN_USERNAME!, process.env.LOGIN_PASSWORD!);
+    //await loginPage.step_login(process.env.LOGIN_USERNAME!, process.env.LOGIN_PASSWORD!);
+    await loginPage.step_login(username, password);
     await loginPage.verify_productPage();
   });
 
   // scenario: Locked-out account
   test('[AC-2] [TC-LOGIN-002] should show the locked-out error', async ({ loginPage }) => {
-    await loginPage.step_login(expected.lockedOutUsername, process.env.LOGIN_PASSWORD!);
+    //await loginPage.step_login(expected.lockedOutUsername, process.env.LOGIN_PASSWORD!);
+    await loginPage.step_login(expected.lockedOutUsername, password);
     await loginPage.verify_lockedOutError();
   });
 
