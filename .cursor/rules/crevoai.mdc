@@ -1,0 +1,33 @@
+---
+description: CrevoAI test automation — workflow and tool rules
+alwaysApply: true
+---
+
+<!-- crevoai:start -->
+# CrevoAI Rules
+
+CrevoAI handles Playwright test design and automation (story/test design, write, fix, stabilize, refactor, run, audit, scaffold, CI). When requested, engage the CrevoAI skill: call `crevoai_workflow` first. For general coding/docs, work directly without CrevoAI tools.
+- To set up a new project structure: "Set up my project with CrevoAI in the current workspace."
+- To upgrade an existing project test structure to the latest test-design flow: "Upgrade my project test structure with CrevoAI."
+
+Isolation & Scope Rules:
+- STRICT SCOPE: Only inspect, reference, and generate files inside the CURRENT OPENED WORKSPACE.
+- NEVER access, read, or copy from parent directories, sibling folders, or previous projects.
+- In setup/bootstrap, execute `scaffold_project` directly in the current workspace.
+- Read `.crevoai/rules.md` first if present (project overrides take precedence).
+- Never delete or overwrite anything under `.crevoai/`.
+
+Traceability & Test Generation Rules:
+- Header: Start every test file with `// spec: .crevoai/stories/<feature>/<feature>.story.md` as line 1.
+- Scenarios: Add `// scenario: <name>` before EVERY `test()` block, matching a scenario or testcase heading from the test design.
+- Test Titles: Start EVERY test title with `[AC-n] [TC-<FEATURE>-<NNN>]` (e.g. `test('[AC-1] [TC-LOGIN-001] should ...', ...)`). NEVER omit `[AC-n]` or the `// scenario:` comment.
+- Count Parity: The number of tests in `tests/<feature>.spec.ts` must exactly equal the test design's designed test cases (`TC-*`) count. If 1 TC was designed, write exactly 1 test; do not add 2 tests without updating the test design.
+- Test Results: Always ensure test execution writes to `test-results/results.json` so the extension dashboard tracks pass/fail status.
+
+User Interaction & Asking Discipline:
+- ALWAYS use the interactive question form tool (`ask_question` / `crevoai_ask_user`) when questions, choices, or approvals are needed.
+- NEVER ask questions as plain chat text asking the user to type in a prompt response. Always provide structured selectable options.
+- UI Controls & Form Grounding: Inspect all control types (dropdowns, date/time pickers, range sliders/draggers, masked inputs, uploaders, and conditional dependent fields). Never guess form data or combinations blindly; query the user via question form with discovered options/bounds before creating test designs.
+
+
+<!-- crevoai:end -->

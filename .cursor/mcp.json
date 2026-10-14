@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "CrevoAI": {
+      "url": "http://127.0.0.1:9223/mcp?project_root=d%3A%5CcrevoAIAutomation%5COpenCrevoTest",
+      "headers": {
+        "x-crevoai-project-root": "d:\\crevoAIAutomation\\OpenCrevoTest"
+      }
+    }
+  }
+}

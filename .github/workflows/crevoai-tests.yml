@@ -1,0 +1,44 @@
+name: crevoai playwright tests
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+  checks: write
+
+jobs:
+  run-tests:
+    name: Shard ${{ matrix.shardIndex }} / 2
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        shardIndex: [ 1, 2 ]
+    env:
+      BASE_URL: ${{ vars.BASE_URL }}
+      LOGIN_USERNAME: ${{ secrets.LOGIN_USERNAME }}
+      LOGIN_PASSWORD: ${{ secrets.LOGIN_PASSWORD }}
+      WORKERS: ${{ vars.WORKERS || '1' }}
+      RETRIES: ${{ vars.RETRIES || '1' }}
+    steps:
+    - uses: opencrevo-ai/crevoai-actions/setup@v1
+    - uses: opencrevo-ai/crevoai-actions/run-shard@v1
+      with:
+        shard-index: ${{ matrix.shardIndex }}
+        total-shards: 2
+
+  merge-reports:
+    name: Merge & Publish Reports
+    needs: [ run-tests ]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+    - uses: opencrevo-ai/crevoai-actions/setup@v1
+    - uses: opencrevo-ai/crevoai-actions/merge-reports@v1

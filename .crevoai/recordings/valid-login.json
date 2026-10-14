@@ -1,0 +1,162 @@
+{
+  "name": "valid-login",
+  "recorded_at": "2026-10-14T06:37:36.353Z",
+  "session_id": "cdbc6e29-ab2a-462c-83ae-db46268e2cb9",
+  "project_root": "d:\\crevoAIAutomation\\OpenCrevoTest",
+  "status": "finalized",
+  "steps": [
+    {
+      "seq": 1,
+      "action": "navigate",
+      "timestamp": "2026-10-14T06:37:36.429Z",
+      "url": "https://codemify-demo-app.vercel.app/demo-app",
+      "chosen": null,
+      "candidates": [],
+      "screenshot_after": "step-001.png",
+      "actor": "agent",
+      "navigation_trigger": "explicit"
+    },
+    {
+      "seq": 2,
+      "action": "fill",
+      "timestamp": "2026-10-14T06:37:38.924Z",
+      "text": "standard_user",
+      "chosen": {
+        "strategy": "testid_xpath",
+        "value": "username",
+        "attr": "data-test",
+        "strength": "strong"
+      },
+      "candidates": [
+        {
+          "strategy": "testid_xpath",
+          "value": "username",
+          "attr": "data-test",
+          "strength": "strong"
+        },
+        {
+          "strategy": "testid",
+          "value": "username",
+          "attr": "data-test",
+          "strength": "strong"
+        },
+        {
+          "strategy": "role_name",
+          "value": "textbox[name=\"Username\"]",
+          "strength": "medium"
+        }
+      ],
+      "element": {
+        "role": "textbox",
+        "name": "Username",
+        "tag": "input",
+        "placeholder": "Username"
+      },
+      "screenshot_after": "step-002.png",
+      "actor": "agent"
+    },
+    {
+      "seq": 3,
+      "action": "fill",
+      "timestamp": "2026-10-14T06:37:39.312Z",
+      "text": "my_secret_code",
+      "chosen": {
+        "strategy": "testid_xpath",
+        "value": "password",
+        "attr": "data-test",
+        "strength": "strong"
+      },
+      "candidates": [
+        {
+          "strategy": "testid_xpath",
+          "value": "password",
+          "attr": "data-test",
+          "strength": "strong"
+        },
+        {
+          "strategy": "testid",
+          "value": "password",
+          "attr": "data-test",
+          "strength": "strong"
+        },
+        {
+          "strategy": "role_name",
+          "value": "textbox[name=\"Password\"]",
+          "strength": "medium"
+        }
+      ],
+      "element": {
+        "role": "textbox",
+        "name": "Password",
+        "tag": "input",
+        "placeholder": "Password"
+      },
+      "screenshot_after": "step-003.png",
+      "actor": "agent"
+    },
+    {
+      "seq": 4,
+      "action": "click",
+      "timestamp": "2026-10-14T06:37:44.049Z",
+      "chosen": {
+        "strategy": "testid_xpath",
+        "value": "login-button",
+        "attr": "data-test",
+        "strength": "strong"
+      },
+      "candidates": [
+        {
+          "strategy": "testid_xpath",
+          "value": "login-button",
+          "attr": "data-test",
+          "strength": "strong"
+        },
+        {
+          "strategy": "testid",
+          "value": "login-button",
+          "attr": "data-test",
+          "strength": "strong"
+        },
+        {
+          "strategy": "role_name",
+          "value": "button[name=\"login-button\"]",
+          "strength": "medium"
+        }
+      ],
+      "element": {
+        "role": "button",
+        "name": "login-button",
+        "tag": "button"
+      },
+      "screenshot_after": "step-004.png",
+      "actor": "agent"
+    },
+    {
+      "seq": 5,
+      "action": "snapshot",
+      "timestamp": "2026-10-14T06:37:46.808Z",
+      "chosen": null,
+      "candidates": [],
+      "screenshot_after": "step-005.png",
+      "actor": "agent"
+    }
+  ],
+  "started_by": "agent",
+  "actor_summary": {
+    "human": 0,
+    "agent": 5
+  },
+  "pre_conditions": [
+    "A fresh session is open at the base URL",
+    "The login form is visible"
+  ],
+  "post_conditions": [
+    "The product catalog is displayed",
+    "The Products heading is visible"
+  ],
+  "depends_on": [],
+  "pages_covered": [
+    "https://codemify-demo-app.vercel.app/demo-app"
+  ],
+  "summary": "A user signs in with the accepted standard account shown on the login page. The app stays on the demo URL and renders the product catalog, including the Products heading."
+}

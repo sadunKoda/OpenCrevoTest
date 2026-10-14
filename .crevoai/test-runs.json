@@ -1,0 +1,32 @@
+{
+  "runs": [
+    {
+      "id": "#2",
+      "at": "Just now",
+      "abs": "10/14/2026, 12:22:20 PM",
+      "passed": 2,
+      "failed": 0,
+      "flaky": 0,
+      "skipped": 0,
+      "duration": "7.71s",
+      "commit": null,
+      "branch": null
+    },
+    {
+      "id": "#1",
+      "at": "Just now",
+      "abs": "10/14/2026, 11:58:47 AM",
+      "passed": 1,
+      "failed": 0,
+      "flaky": 0,
+      "skipped": 0,
+      "duration": "6.07s",
+      "commit": null,
+      "branch": null
+    }
+  ],
+  "seenKeys": [
+    "2026-10-14T06:52:20.125Z",
+    "2026-10-14T06:28:47.382Z"
+  ]
+}

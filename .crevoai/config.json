@@ -1,0 +1,4 @@
+{
+  "projectRoot": ".",
+  "testIdAttribute": "data-testid"
+}

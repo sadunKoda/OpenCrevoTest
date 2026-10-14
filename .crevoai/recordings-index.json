@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "name": "locked-out-login",
+      "safe_name": "locked-out-login",
+      "path": ".crevoai/recordings/locked-out-login.json",
+      "summary": "A user signs in with the locked-out account shown on the login page. The app stays on the login form and shows an error that the user has been locked out.",
+      "pre_conditions": [
+        "A fresh session is open at the base URL",
+        "The login form is visible"
+      ],
+      "post_conditions": [
+        "The user remains on the login page",
+        "The error says the user has been locked out"
+      ],
+      "depends_on": [],
+      "pages_covered": [
+        "https://codemify-demo-app.vercel.app/demo-app"
+      ],
+      "started_by": "agent",
+      "recorded_at": "2026-10-14T06:43:31.252Z",
+      "step_count": 5,
+      "status": "finalized",
+      "thumbnail_path": "d:\\crevoAIAutomation\\OpenCrevoTest\\.crevoai\\recordings\\locked-out-login\\step-001.png"
+    },
+    {
+      "name": "valid-login",
+      "safe_name": "valid-login",
+      "path": ".crevoai/recordings/valid-login.json",
+      "summary": "A user signs in with the accepted standard account shown on the login page. The app stays on the demo URL and renders the product catalog, including the Products heading.",
+      "pre_conditions": [
+        "A fresh session is open at the base URL",
+        "The login form is visible"
+      ],
+      "post_conditions": [
+        "The product catalog is displayed",
+        "The Products heading is visible"
+      ],
+      "depends_on": [],
+      "pages_covered": [
+        "https://codemify-demo-app.vercel.app/demo-app"
+      ],
+      "started_by": "agent",
+      "recorded_at": "2026-10-14T06:37:36.353Z",
+      "step_count": 5,
+      "thumbnail_path": "d:\\crevoAIAutomation\\OpenCrevoTest\\.crevoai\\recordings\\valid-login\\step-001.png",
+      "status": "finalized"
+    }
+  ]
+}
